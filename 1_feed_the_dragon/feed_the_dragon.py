@@ -31,7 +31,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 #Set fonts
-font = pygame.font.Font('1_feed_the_dragon\\Assets\AttackGraffiti.ttf', 32)
+font = pygame.font.Font('Assets/AttackGraffiti.ttf', 32)
 
 #Set text
 score_text = font.render("Score: " + str(score), True, GREEN,)
@@ -56,18 +56,18 @@ continue_rect = continue_text.get_rect()
 continue_rect.center = (WINDOW_WIDTH//2, WINDOW_HEIGHT//2 + 32)
 
 #Set sounds and music
-coin_sound = pygame.mixer.Sound("1_feed_the_dragon\Assets/coin_sound.wav")
-miss_sound = pygame.mixer.Sound("1_feed_the_dragon\Assets/miss_sound.wav")
+coin_sound = pygame.mixer.Sound("Assets/coin_sound.wav")
+miss_sound = pygame.mixer.Sound("Assets/miss_sound.wav")
 miss_sound.set_volume(.1)
-pygame.mixer.music.load("1_feed_the_dragon\Assets/ftd_background_music.wav")
+pygame.mixer.music.load("Assets/ftd_background_music.wav")
 
 #Set images
-player_image = pygame.image.load("1_feed_the_dragon\Assets/dragon_right.png")
+player_image = pygame.image.load("Assets/dragon_right.png")
 player_rect = player_image.get_rect()
 player_rect.left = 32
 player_rect.centery = WINDOW_HEIGHT//2
 
-coin_image = pygame.image.load("1_feed_the_dragon\Assets/coin.png")
+coin_image = pygame.image.load("Assets/coin.png")
 coin_rect = coin_image.get_rect()
 coin_rect.x = WINDOW_WIDTH + BUFFER_DISTANCE
 coin_rect.y = random.randint(64, WINDOW_HEIGHT - 32)
@@ -145,7 +145,7 @@ while running:
     display_surface.blit(lives_text, lives_rect)
     pygame.draw.line(display_surface, WHITE, (0, 64), (WINDOW_WIDTH, 64), 2)
 
-    #Blit 1_feed_the_dragon\Assets to screen
+    #Blit Assets to screen
     display_surface.blit(player_image, player_rect)
     display_surface.blit(coin_image, coin_rect)
 
